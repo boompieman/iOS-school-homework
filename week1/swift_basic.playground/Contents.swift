@@ -45,7 +45,8 @@ salary += 28000
 
 //6.
 
-0 == false
+Int(false)
+
 
 //7.
 

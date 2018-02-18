@@ -39,26 +39,29 @@ class People {
     var pet: Pet?
 }
 
-
+//guard let
 let person = People()
 person.pet = Pet(name: "Cash")
 //person.pet = nil
 
+func makeSurePet(person:People) ->String {
+    guard let pet1 = person.pet else {
+        return "I don't have a pet"
+    }
+    return "\(pet1.name) is my pet"
+}
 
-//guard let pet1 = People().pet else {
-//    print("pet is empty")
-//    return
-//}
-//print(pet1.name)
+print(makeSurePet(person: person))
+
+
+//if let
 let person2 = People()
 person2.pet = nil
 
-if let pet2 = person2.pet, pet2 == nil {
-    print("pet is not exist")
-} 
-//    print(person2.pet?.name)
-//}
-
-print("exit")
+if let pet2 = person2.pet{
+    print("\(pet2.name) is my pet")
+} else {
+    print("I don't have a pet")
+}
 
 

@@ -26,7 +26,6 @@ protocol ToolMan {
 //4.
 struct Person2: PoliceMan, ToolMan {
     var name: String
-    var toolMan: ToolMan
     func arrestCriminals() {
         
     }

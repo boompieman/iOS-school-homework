@@ -133,13 +133,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     func updateCell(having indexPath: IndexPath, selected: Bool) {
-        
+
+//
 //        let selectedBackgroundColor = UIColor.lightGray
 //        let defaultBackgroundColor = UIColor.black
 //
+//
 //        if let cell = collectionView.cellForItem(at: indexPath) {
 //            cell.contentView.backgroundColor = selected ? selectedBackgroundColor : defaultBackgroundColor
-//
 //        }
     }
 

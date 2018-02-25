@@ -76,11 +76,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         cell.buttonNumber.layer.borderWidth = 2
         cell.clipsToBounds = true
         cell.buttonNumber.layer.masksToBounds = true
-        // 115.0
-//        print(cell.bounds.size.width)
-        print(screenWidth)
         cell.buttonNumber.layer.cornerRadius = (cell.bounds.size.width - 20) * 0.5
-        print (cell.buttonNumber.layer.cornerRadius)
         
         
         return cell
@@ -138,12 +134,13 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     func updateCell(having indexPath: IndexPath, selected: Bool) {
         
-        let selectedBackgroundColor = UIColor(red: 41/255.0, green: 211/255.0, blue: 241/255.0, alpha: 1.0)
-        let defaultBackgroundColor = UIColor.black
-
-        if let cell = collectionView.cellForItem(at: indexPath) {
-            cell.contentView.backgroundColor = selected ? selectedBackgroundColor : defaultBackgroundColor
-        }
+//        let selectedBackgroundColor = UIColor.lightGray
+//        let defaultBackgroundColor = UIColor.black
+//
+//        if let cell = collectionView.cellForItem(at: indexPath) {
+//            cell.contentView.backgroundColor = selected ? selectedBackgroundColor : defaultBackgroundColor
+//
+//        }
     }
 
     override func didReceiveMemoryWarning() {

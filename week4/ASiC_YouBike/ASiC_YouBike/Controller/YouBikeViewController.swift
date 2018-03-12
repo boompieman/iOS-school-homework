@@ -18,33 +18,30 @@ protocol StationInfo {
     var remainBikes: String { get }
 }
 
-class YouBikeViewController: UIViewController, MKMapViewDelegate {
+class YouBikeViewController: UIViewController, MKMapViewDelegate, DelegateClientProtocol {
+
+    @IBOutlet weak var nameLabel: UILabel!
     
+    @IBOutlet weak var positionLabel: UILabel!
+    
+    @IBOutlet weak var remainBikesLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
     
     let closureClient = ClosureClient()
-    
-    @IBOutlet weak var name: UILabel!
+
     var delegateClient = DelegateClient()
-    let stationInfo = StationInfoGetter()
     
-    var stationsInfo = [StationInfo]()
     var annotations = [MKAnnotation]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         mapView.delegate = self
+        delegateClient.delegate = self
+        closureClient.getDataFromFile(completion: completion)
 
-        
-        setData()
         addAnnotations()
         setCenter()
-    }
-    
-    func setData() {
-        closureClient.getDataFromFile(completion: completion)
-        delegateClient.delegate = stationInfo
         delegateClient.loadData()
     }
     
@@ -56,6 +53,12 @@ class YouBikeViewController: UIViewController, MKMapViewDelegate {
         mapView.addAnnotations(annotations)
     }
     
+    func didGetDataFromFile(stationInfo: StationInfo) {
+        nameLabel.text = stationInfo.name
+        positionLabel.text = stationInfo.position
+        remainBikesLabel.text = "剩 \(stationInfo.remainBikes) 台"
+    }
+    
     func setCenter() {
         let latDelta = 0.05
         let longDelta = 0.05
@@ -65,10 +68,6 @@ class YouBikeViewController: UIViewController, MKMapViewDelegate {
         let currentRegion:MKCoordinateRegion = MKCoordinateRegion(center: center,
                                                                   span: currentLocationSpan)
         mapView.setRegion(currentRegion, animated: true)
-    }
-    
-    func setLabel(stationInfo: StationInfo) {
-        name.text = stationInfo.name
     }
     
 //     改變annotation樣式
@@ -83,11 +82,3 @@ class YouBikeViewController: UIViewController, MKMapViewDelegate {
 //
 //    }
 }
-
-class StationInfoGetter: DelegateClientProtocol {
-    
-    func didGetDataFromFile(stationInfo: StationInfo) {
-//        YouBikeViewController.setLabel(stationInfo: stationInfo)
-    }
-}
-

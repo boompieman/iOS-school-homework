@@ -18,6 +18,7 @@ protocol DelegateClientProtocol: class {
  */
 
 
+
 struct DelegateClient {
     
     // why optional: all the struct and class need init, but delegate doesn't need, so we use optional

@@ -37,9 +37,6 @@ class YouBikeAnnotation: NSObject, MKAnnotation {
 */
 
 struct ClosureClient {
-    
-    var annotations = [YouBikeAnnotation]()
-    
     func getDataFromFile(completion: (MKAnnotation) -> Void) -> Void {
         
         let manager = YouBikeManager.createManagerFromFile()

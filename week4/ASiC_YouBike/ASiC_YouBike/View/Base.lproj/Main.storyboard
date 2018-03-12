@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="120"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="svP-ig-Aho" userLabel="nameLabel">
-                                        <rect key="frame" x="38" y="8" width="200" height="21"/>
+                                        <rect key="frame" x="38" y="9" width="200" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -74,7 +74,9 @@
                     <navigationItem key="navigationItem" title="YouBike" id="n8Z-Nw-5rk"/>
                     <connections>
                         <outlet property="mapView" destination="7hf-ns-XV4" id="6Bi-OB-7Ia"/>
-                        <outlet property="name" destination="svP-ig-Aho" id="HVy-v5-2M3"/>
+                        <outlet property="nameLabel" destination="svP-ig-Aho" id="533-Pm-b5M"/>
+                        <outlet property="positionLabel" destination="cFa-YN-gGr" id="nim-uo-qof"/>
+                        <outlet property="remainBikesLabel" destination="Xzz-zX-GUW" id="i1r-lX-u7b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
